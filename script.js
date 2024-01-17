@@ -1,7 +1,6 @@
 function getComputerChoice() {
-    computerSelection = Math.floor(Math.random()*3 + 1);
+    let computerSelection = Math.floor(Math.random()*3 + 1);
   /* Assigns random int number between 1 - 3 as the computer choice. */
-    console.log(computerSelection);
     switch (computerSelection) {
         case 1:
     	    computerSelection = 'Rock';
@@ -12,19 +11,20 @@ function getComputerChoice() {
         case 3:
             computerSelection = 'Scissors';
     	    break;
-    return computerSelection
-  }
+    } 
+    console.log(computerSelection);
+    return computerSelection;
 }
 
 function playRound(playerSelection, computerSelection) {
     /*change playerSelection to lower case*/
     let playerSelectionLower = playerSelection.toLowerCase();
     /*Seperate the first letter and capitalize*/
-    let firstLetter = playerSelectionLower.charat(0);
+    let firstLetter = playerSelectionLower.charAt(0);
     firstLetter = firstLetter.toUpperCase();
     /*slice remaining letters after first letter and concat with Uppercase first letter*/
     let remainingLetters = playerSelectionLower.slice(1);
-    let playerSelectionFormatted = concat(firstLetter,remainingLetters);
+    let playerSelectionFormatted = firstLetter.concat(remainingLetters);
 
     console.log(playerSelectionFormatted)
 
@@ -59,7 +59,7 @@ function playRound(playerSelection, computerSelection) {
                 break;
         }  
     } else {
-        return "Improper input, please enter Rock, Paper or Scissors."
+        return "Improper input, please enter Rock, Paper or Scissors.";
     }
 }
 
