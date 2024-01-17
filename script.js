@@ -16,15 +16,32 @@ function getComputerChoice() {
     return computerSelection;
 }
 
+function formatText(text) {
+    //get first letter of text
+    let textFirstLetter = text.charAt(0);
+    //Capitalize first letter
+    textFirstLetter = textFirstLetter.toUpperCase();
+    //get remaining letters after first letter
+    let remainingLetters = text.slice(1)
+    //format text to all lowercase to account to make case-insensitve
+    let remainingLettersLower = remainingLetters.toLowerCase();
+    return textFirstLetter.concat(remainingLettersLower);
+}
+
 function playRound(playerSelection, computerSelection) {
-    /*change playerSelection to lower case*/
+    
+    /* created new function to call
+    // change playerSelection to lower case
     let playerSelectionLower = playerSelection.toLowerCase();
-    /*Seperate the first letter and capitalize*/
+    // Seperate the first letter and capitalize
     let firstLetter = playerSelectionLower.charAt(0);
     firstLetter = firstLetter.toUpperCase();
-    /*slice remaining letters after first letter and concat with Uppercase first letter*/
+    // slice remaining letters after first letter and concat with Uppercase first letter
     let remainingLetters = playerSelectionLower.slice(1);
     let playerSelectionFormatted = firstLetter.concat(remainingLetters);
+    */
+
+    let playerSelectionFormatted = formatText(playerSelection);
 
     console.log("Player: " + playerSelectionFormatted)
 
