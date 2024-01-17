@@ -77,8 +77,7 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-
-
+    /*Loop until player or computer reaches points to win score*/
     while (playerScore < pointsToWin && computerScore < pointsToWin) {
 
         console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}\nScore to win: ${pointsToWin}`)
