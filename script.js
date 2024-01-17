@@ -81,7 +81,7 @@ function game() {
 
     while (playerScore < pointsToWin && computerScore < pointsToWin) {
 
-        console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}`)
+        console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}\nScore to win: ${pointsToWin}`)
 
         let playerSelection = prompt("Enter Rock, Paper, or Scissors to play!")
         switch (playRound(playerSelection,getComputerChoice())) {
@@ -92,7 +92,7 @@ function game() {
                 console.log("Computer won this round!");
                 computerScore += 1;
                 if (computerScore == pointsToWin) {
-                    console.log("Computer wins the game!");
+                    console.log(`Computer wins the game! ${computerScore} to ${playerScore}`);
                     return
                 }
                 break;
@@ -100,7 +100,7 @@ function game() {
                 console.log("You won this round!");
                 playerScore += 1;
                 if (playerScore == pointsToWin) {
-                    console.log("You win the game!");
+                    console.log(`You win the game! ${playerScore} to ${computerScore}`);
                     return
                 }
                 break;
