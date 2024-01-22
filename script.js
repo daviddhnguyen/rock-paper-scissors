@@ -29,17 +29,6 @@ function formatText(text) {
 }
 
 function playRound(playerSelection, computerSelection) {
-    
-    /* created new function to call
-    // change playerSelection to lower case
-    let playerSelectionLower = playerSelection.toLowerCase();
-    // Seperate the first letter and capitalize
-    let firstLetter = playerSelectionLower.charAt(0);
-    firstLetter = firstLetter.toUpperCase();
-    // slice remaining letters after first letter and concat with Uppercase first letter
-    let remainingLetters = playerSelectionLower.slice(1);
-    let playerSelectionFormatted = firstLetter.concat(remainingLetters);
-    */
 
     let playerSelectionFormatted = formatText(playerSelection);
 
@@ -78,52 +67,6 @@ function playRound(playerSelection, computerSelection) {
         }  
     } else {
         return "Input error";
-    }
-}
-
-/* test code
-const playerSelection = "rOCk";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-*/
-
-function game() {
-    /*create best-of-five game and keep score. 
-    Report winner or loser once player or computer reaches 5*/
-    let pointsToWin = 5;
-    let playerScore = 0;
-    let computerScore = 0;
-
-    /*Loop until player or computer reaches points to win score*/
-    while (playerScore < pointsToWin && computerScore < pointsToWin) {
-
-        console.log(`Player Score: ${playerScore} \nComputer Score: ${computerScore}\nScore to win: ${pointsToWin}`)
-
-        let playerSelection = prompt("Enter Rock, Paper, or Scissors to play!")
-        switch (playRound(playerSelection,getComputerChoice())) {
-            case "tied":
-                console.log("You tied!- Play again!");
-                break;
-            case "Computer won!":
-                console.log("Computer won this round!");
-                computerScore += 1;
-                if (computerScore == pointsToWin) {
-                    console.log(`Computer wins the game! ${computerScore} to ${playerScore}`);
-                    return
-                }
-                break;
-            case "You won!":
-                console.log("You won this round!");
-                playerScore += 1;
-                if (playerScore == pointsToWin) {
-                    console.log(`You win the game! ${playerScore} to ${computerScore}`);
-                    return
-                }
-                break;
-            case "Input error":
-                console.log("Improper input, please enter Rock, Paper or Scissors.");
-                break;
-        }
     }
 }
 
