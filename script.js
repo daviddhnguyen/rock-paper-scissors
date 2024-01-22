@@ -70,4 +70,10 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-game()
+let playerSelection = document.querySelectorAll('button');
+
+playerSelection.forEach((item) => {
+        //console.log(playRound(playerSelection.textContent, getComputerChoice));
+        item.addEventListener('click', () => 
+        console.log(playRound(item.textContent,getComputerChoice())));
+});
