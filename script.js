@@ -74,6 +74,15 @@ let playerSelection = document.querySelectorAll('button');
 
 playerSelection.forEach((item) => {
         //console.log(playRound(playerSelection.textContent, getComputerChoice));
-        item.addEventListener('click', () => 
-        console.log(playRound(item.textContent,getComputerChoice())));
+        item.addEventListener('click', () => {
+          let results = playRound(item.textContent, getComputerChoice());
+  
+          const content = document.querySelector('.content');
+        
+          const msg = document.createElement('div');
+          const resultsText = document.createTextNode(results);
+          msg.appendChild(resultsText);
+
+          content.innerHTML = msg.innerHTML;
+        });
 });
