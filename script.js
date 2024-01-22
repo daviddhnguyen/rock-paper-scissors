@@ -70,19 +70,53 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+let pointsToWin = 5;
+let playerScore = 0;
+let computerScore = 0;
+
 let playerSelection = document.querySelectorAll('button');
-
-playerSelection.forEach((item) => {
-        //console.log(playRound(playerSelection.textContent, getComputerChoice));
-        item.addEventListener('click', () => {
-          let results = playRound(item.textContent, getComputerChoice());
   
-          const content = document.querySelector('.content');
-        
-          const msg = document.createElement('div');
-          const resultsText = document.createTextNode(results);
-          msg.appendChild(resultsText);
+playerSelection.forEach((item) => {
+          //console.log(playRound(playerSelection.textContent, getComputerChoice));
+        item.addEventListener('click', () => {
+          if (playerScore >= pointsToWin || computerScore >= pointsToWin) {
+            playerScore = 0;
+            computerScore = 0;
+          }
+          
+          switch (playRound(item.textContent,getComputerChoice())) {
+              case "tied":
+                results = `You tied!- Play again!\n
+                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                break;
+              case "Computer won!":
+                computerScore += 1;
+                if (computerScore == pointsToWin) {
+                  results = `Computer wins the game!\n
+                  Final Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                  break;
+                }
+                results = `Computer won this round!\n
+                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                break;
+              case "You won!":
+                playerScore += 1;
+                  if (playerScore == pointsToWin) {
+                      results = `You win the game!\n
+                      Final Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                    break;
+                  }
+                results = `You won this round!\n
+                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                break;
+            }
+            
+            const content = document.querySelector('.content');
 
-          content.innerHTML = msg.innerHTML;
-        });
+            const msg = document.createElement('div');
+            const resultsText = document.createTextNode(results);
+            msg.appendChild(resultsText);
+
+            content.innerHTML = msg.innerHTML;
+          });
 });
