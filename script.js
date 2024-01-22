@@ -87,27 +87,25 @@ playerSelection.forEach((item) => {
           switch (playRound(item.textContent,getComputerChoice())) {
               case "tied":
                 results = `You tied!- Play again!\n
-                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                Current Score - Player: ${playerScore} vs Computer: ${computerScore}`;
                 break;
               case "Computer won!":
                 computerScore += 1;
                 if (computerScore == pointsToWin) {
-                  results = `Computer wins the game!\n
-                  Final Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                  alert(`You lost to the computer!\nPlayer: ${playerScore} vs Computer: ${computerScore}`);
                   break;
                 }
                 results = `Computer won this round!\n
-                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                Current Score - Player: ${playerScore} vs Computer: ${computerScore}`;
                 break;
               case "You won!":
                 playerScore += 1;
                   if (playerScore == pointsToWin) {
-                      results = `You win the game!\n
-                      Final Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                      alert(`You beat the computer!\nPlayer: ${playerScore} vs Computer: ${computerScore}`);
                     break;
                   }
                 results = `You won this round!\n
-                Current Score - Player: ${playerScore} to Computer: ${computerScore}`;
+                Current Score - Player: ${playerScore} vs Computer: ${computerScore}`;
                 break;
             }
             
