@@ -8,7 +8,8 @@ The player will enter rock, paper, and scissors and compare against the computer
 
 The winner is as follows:
 
-Rock beats scissors
-Scissors beats paper
+Rock beats scissors \n
+Scissors beats paper \n
 Paper beats rock
 
+[Link to site](https://daviddhnguyen.github.io/rock-paper-scissors)
